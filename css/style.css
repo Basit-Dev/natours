@@ -9,7 +9,7 @@ Dark green: #28b485
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 body {
   font-family: "Lato", sans-serif;
@@ -50,16 +50,55 @@ body {
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
+
+/* HIDE THE SHAKE IN THE ANIMATION */
+  backface-visibility: hidden;
 }
 .heading-primary-main {
   display: block;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+/* CALL THE KEYFRAMES */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
 }
 .heading-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  /* SHORTHAND */
+  animation: moveInRight 1s ease-out;
+}
+@keyframes moveInLeft {
+  /* ANIMATION START */
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+/* ANIMATION END */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* ANIMATION START */
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+/* ANIMATION END */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
