@@ -45,21 +45,23 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
 
-/* HIDE THE SHAKE IN THE ANIMATION */
+  /* HIDE THE SHAKE IN THE ANIMATION */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 .heading-primary-main {
   display: block;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
-/* CALL THE KEYFRAMES */
+  /* CALL THE KEYFRAMES */
   animation-name: moveInLeft;
   animation-duration: 1s;
 }
@@ -80,7 +82,7 @@ body {
   80% {
     transform: translateX(10px);
   }
-/* ANIMATION END */
+  /* ANIMATION END */
   100% {
     opacity: 1;
     transform: translate(0);
@@ -96,9 +98,33 @@ body {
   80% {
     transform: translateX(-10px);
   }
-/* ANIMATION END */
+  /* ANIMATION END */
   100% {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #777;
 }
