@@ -1,177 +1,158 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
+/* line 1, sass/base/_base.scss */
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
+
+/* line 8, sass/base/_base.scss */
 html {
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
+
+/* line 11, sass/base/_base.scss */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box;
-}
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgb(40, 180, 133, 0.8)
-    ),
-    url(/img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 74vh, 0 100%);
-  position: relative;
-}
-.logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.logo {
-  width: 3.5rem;
-}
-.text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  box-sizing: border-box; }
 
-.heading-primary {
-  color: #ffffff;
-  text-transform: uppercase;
-
-  /* HIDE THE SHAKE IN THE ANIMATION */
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-}
-.heading-primary-main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /* CALL THE KEYFRAMES */
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-}
-.heading-primary-sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /* SHORTHAND */
-  animation: moveInRight 1s ease-out;
-}
 @keyframes moveInLeft {
   /* ANIMATION START */
   0% {
     opacity: 0;
-    transform: translateX(-10rem);
-  }
+    transform: translateX(-10rem); }
   80% {
-    transform: translateX(1rem);
-  }
+    transform: translateX(1rem); }
   /* ANIMATION END */
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   /* ANIMATION START */
   0% {
     opacity: 0;
-    transform: translateX(10rem);
-  }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-1rem);
-  }
+    transform: translateX(-1rem); }
   /* ANIMATION END */
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem;
-}
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: #ffffff;
-  color: #777;
-}
-
-/* Create a element after the btn */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-.btn-white::after {
-  background-color: #ffffff;
-}
-/* Grow the element on hover*/
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* use opcity to fade something out */
-  opacity: 0;
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   /* ANIMATION START */
   0% {
     opacity: 0;
     transform: translateY(3rem);
-    /* animation-delay: 0.75s; */
-  }
+    /* animation-delay: 0.75s; */ }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
-.btn-animated {
-  animation: moveInBottom 0.5s ease-in;
-  animation-fill-mode: backwards;
-}
+    transform: translate(0); } }
+
+/* line 1, sass/base/_typography.scss */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+/* line 11, sass/base/_typography.scss */
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+  /* HIDE THE SHAKE IN THE ANIMATION */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  /* line 18, sass/base/_typography.scss */
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* CALL THE KEYFRAMES */
+    animation-name: moveInLeft;
+    animation-duration: 1s; }
+  /* line 27, sass/base/_typography.scss */
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* SHORTHAND */
+    animation: moveInRight 1s ease-out; }
+
+/* line 1, sass/components/_button.scss */
+.btn {
+  /* Create a element after the btn */ }
+  /* line 2, sass/components/_button.scss */
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem; }
+  /* line 13, sass/components/_button.scss */
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* Grow the element on hover*/ }
+    /* line 18, sass/components/_button.scss */
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* use opcity to fade something out */
+      opacity: 0; }
+  /* line 24, sass/components/_button.scss */
+  .btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  /* line 29, sass/components/_button.scss */
+  .btn--white {
+    background-color: #ffffff;
+    color: #777; }
+    /* line 32, sass/components/_button.scss */
+    .btn--white::after {
+      background-color: #ffffff; }
+  /* line 38, sass/components/_button.scss */
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+  /* line 51, sass/components/_button.scss */
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-in;
+    animation-fill-mode: backwards; }
+
+/* line 1, sass/layout/_header.scss */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.5), #28b485), url(/img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 74vh, 0 100%);
+  position: relative; }
+  /* line 13, sass/layout/_header.scss */
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  /* line 18, sass/layout/_header.scss */
+  .header__logo {
+    width: 3.5rem; }
+  /* line 21, sass/layout/_header.scss */
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
